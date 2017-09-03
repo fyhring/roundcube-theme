@@ -1,0 +1,695 @@
+ 
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: #FFF;
+    color: #333;
+    font-size: 14px;
+    margin: 0;
+    overflow-x: hidden;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+body.loginPage {
+    background: #8D8A7F;
+}
+
+td, th, div, p, select, input, textarea {
+    font-size: 14px;
+}
+
+a, a:active, a:visited {
+    color: #333;
+}
+
+#taskbar {
+    height: 50px;
+    background: #95a5a6;
+    border-top: 20px solid #7f8c8d;
+}
+
+#taskbar a {
+    background: none;
+    color: #bdc3c7;
+    padding: 3px 12px;
+    top: -31px;
+    position: relative;
+    margin-right: -4px;
+}
+
+#taskbar a:hover {
+    background: #95a5a6;
+}
+
+#taskbar a:last-child {
+    margin-right: -6px;
+}
+
+#header img {
+    display: none;
+}
+
+#header a:before {
+    position: absolute;
+    font-family: 'Open Sans', sans-serif;
+    content: 'My Webmail';
+    font-size: 21px;
+    color: #ecf0f1;
+    font-weight: 100;
+}
+
+#header a:after {
+    position: absolute;
+    font-family: 'Open Sans', sans-serif;
+    content: 'Mail';
+    font-size: 21px;
+    font-weight: 400;
+    color: #ecf0f1;
+    margin-left: 112px;
+}
+
+body > #header {
+    top: 37px;
+    left: 30px;
+}
+
+
+body.loginPage #logo {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 32px;
+    color: #ecf0f1;
+    font-weight: 100;
+    width: 100%;
+    text-align: center;
+    margin-top: 150px;
+}
+body.loginPage #logo strong {
+    font-weight: 400;
+}
+
+
+#mainscreen {
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#mainscreen #mailleftcontainer {
+    width: 250px;
+}
+
+#mainscreen #mailleftcontainer #mailboxlist-container {
+    background-color: #8D8A7F;
+    border: none;
+}
+
+#mailboxlist-container .boxtitle {
+    background: none;
+    color: rgba(255, 255, 255, 0.7);
+    border: none;
+    font-size: 13px;
+    height: 21px !IMPORTANT;
+    padding: 0 0 0 15px;
+    overflow: visible;
+    white-space: normal;
+    margin-top: 15px;
+    font-weight: normal;
+}
+
+#mailboxlist-container .boxlistcontent {
+    position: static;
+}
+
+#mailboxlist {
+    background-color: transparent;
+}
+
+#mailboxlist li {
+    border: none;
+    background: none !IMPORTANT;
+    font-size: 16px;
+    transition: background ease-in 100ms;
+}
+
+#mailboxlist li.selected,
+#mailboxlist li.droptarget li.selected,
+#mailboxlist li:hover {
+    background: #989587 !IMPORTANT;
+    font-weight: normal;
+}
+
+
+#mailboxlist li a {
+    color: #EAEAEA;
+    height: auto;
+    position: static;
+    text-align: left;
+    padding: 5px;
+    padding-left: 30px;
+    font-weight: normal !IMPORTANT;
+    cursor: pointer;
+    transition: color ease-in 100ms;
+}
+
+#mailboxlist li:hover a:hover {
+    color: #FFF;
+}
+
+#mailboxlist-container .boxfooter {
+    background: none;
+    height: auto;
+    border: none;
+}
+
+#mailboxlist-container .boxfooter a.groupactions {
+    background: none;
+    opacity: 1;
+    height: 30px;
+}
+
+#mailboxlist-container .boxfooter a.groupactions:after {
+    position: absolute;
+    content: "\f013";
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 5px 10px;
+    text-align: center;
+    font-size: 20px;
+    transition: color ease-in 100ms;
+}
+
+#mailboxlist-container .boxfooter a.groupactions:hover:after {
+    color: #FFF;
+}
+
+#mailboxlist-container .boxfooter #quotaimg,
+#mailboxlist-container .boxfooter #quota {
+    display: none;
+}
+
+#mailboxlist-container {
+    width: 250px !IMPORTANT;
+}
+
+#mailrightcontainer,
+#messageframe {
+    left: 250px !IMPORTANT;
+}
+
+
+body > #message div {
+    background: rgba(0, 0, 0, 0.6) !IMPORTANT;
+    color: #D8D8D8 !IMPORTANT;
+    border: none !IMPORTANT;
+    border-radius: 25px !IMPORTANT;
+    margin-top: 35px !IMPORTANT;
+    text-align: center !IMPORTANT;
+    padding: 8px 0 !IMPORTANT;
+    font-size: 14px !IMPORTANT;
+    position: absolute;
+    top: 0;
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    cursor: pointer;
+}
+
+body > #message div.loading {
+    display: none !IMPORTANT;
+}
+
+#message-objects div.notice {
+    display: block;
+    margin: 0;
+    border: none;
+    background: rgb(254, 249, 228);
+    border-bottom: 2px solid rgb(248, 224, 126);
+    color: #7f8c8d;
+    font-size: 12px;
+    padding: 8px 15px 4px;
+}
+
+
+
+
+
+
+#mailcontframe {
+    border: none;
+}
+
+#messagelist tbody tr td {
+    padding: 13px 0;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+#messagelist tbody tr:nth-child(even) td {
+    background: #FAFAFA;
+}
+
+#messagelist tr td.subject span.msgicon,
+#messagelist tr td.subject span.unreadchildren {
+    display: none;
+}
+
+#messagelist tr.selected td,
+#messagelist tr.unfocused td {
+    /* background: rgb(152, 152, 152) !IMPORTANT; */
+    background: #7D7B6F !IMPORTANT;
+}
+
+#messagelist thead tr td {
+    padding: 6px 0;
+    background: rgb(125, 123, 111);
+    border: none;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+#messagelist thead tr td a {
+    color: #ecf0f1;
+}
+
+#messagelist tr td.attachment,
+#messagelist tr td.status {
+    visibility: hidden;
+    width: 0;
+}
+
+#messagelist tr td.threads {
+    width: 10px;
+}
+
+#messagelist tr td.threads * {
+    display: none !IMPORTANT;
+}
+
+#messagelist thead tr td.flag { width: 24px; }
+#messagelist tr td.flag span.flagged,
+#messagelist tr td.flag span.unflagged:hover {
+    width: 0;
+    height: 0;
+    margin-top: -7px;
+    margin-left: -2px;
+    color: #B39D37;
+    font: normal normal normal 14px/1 FontAwesome;
+}
+#messagelist tr td.flag span.flagged:after {
+    position: absolute;
+    content: '\f005';
+}
+#messagelist tr td.flag span.unflagged:hover:after {
+    position: absolute;
+    content: '\f006';
+}
+#messagelist thead tr td.flag span.flagged {
+    margin-top: -20px;
+    color: #ecf0f1;
+}
+
+#messagelist tr.flagged td, #messagelist tr.flagged td a {
+    color: inherit;
+}
+#messagelist tr.selected.flagged td,
+#messagelist tr.selected.flagged td a {
+    color: #FFF;
+}
+
+#messagelist tbody tr td.subject a { cursor: pointer; }
+
+
+
+#messagetoolbar {
+    position: relative;
+    z-index: 5;
+    margin-left: 50px;
+    top: 32px;
+}
+
+#messagetoolbar a.button,
+#messagetoolbar a.buttonPas {
+    border: none;
+    border-radius: 0;
+    padding: 12px 20px;
+    height: 15px;
+    text-align: center;
+    color: #ecf0f1;
+    background: #7F8C8D;
+    text-decoration: none;
+
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+.dropbutton span:hover,
+#messagetoolbar a.button:hover,
+#messagetoolbar a.buttonPas:hover {
+    background: #5E6C6D;
+}
+
+
+#messagetoolbar a.checkmail:after { content: "\f021"; }
+#messagetoolbar a.checkmailSel:after { content: "\f021"; }
+#messagetoolbar a.compose:after { content: "\f040"; }
+#messagetoolbar a.composeSel:after { content: "\f040"; }
+#messagetoolbar a.reply:after { content: "\f112"; }
+#messagetoolbar a.replySel:after { content: "\f112"; }
+#messagetoolbar a.replyAll:after { content: "\f122"; }
+#messagetoolbar a.replyAllSel:after { content: "\f122"; }
+#messagetoolbar a.forward:after { content: "\f064"; }
+#messagetoolbar a.forwardSel:after { content: "\f064"; }
+#messagetoolbar a.delete:after { content: "\f05e"; }
+#messagetoolbar a.deleteSel:after { content: "\f05e"; }
+#messagetoolbar a.back:after { content: "\f053"; }
+#messagetoolbar a.backSel:after { content: "\f053"; }
+#messagetoolbar a.markmessage:after { content: "\f205"; }
+#messagetoolbar a.messagemenu:after { content: "\f013"; }
+
+
+.dropbutton span {
+    background: transparent;
+    color: #EAEFF0;
+    position: relative;
+    right: 25px;
+    width: 20px;
+    height: 39px;
+    box-sizing: border-box;
+    padding: 13px 5px 0;
+
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+.dropbutton span:after {
+    content: "\f0d7";
+}
+
+span.dropbutton a[class*="Pas"] + span {
+    opacity: 0.35;
+}
+
+
+
+
+
+
+#mailrightcontainer .boxfooter {
+    height: auto;
+    overflow: visible;
+    background: none;
+    border: none;
+}
+
+#listcontrols {
+    background: #7D7B6F;
+    left: 0;
+    padding: 0;
+    font-size: 12px;
+    box-sizing: border-box;
+    height: 57px;
+}
+
+#listcontrols * {
+    display: none !IMPORTANT;
+}
+
+#countcontrols {
+    background: none;
+    right: 0;
+    top: auto;
+    bottom: 0;
+    font-size: 12px;
+    min-width: 210px;
+    box-sizing: border-box;
+    padding: 10px 12px 10px;
+}
+
+#countcontrols.pagenav a {
+    border: none;
+    border-radius: 0;
+    padding: 12px 20px 8px;
+    height: 15px;
+    text-align: center;
+    color: #ecf0f1;
+    background: #989587;
+    text-decoration: none;
+    margin-left: 12px;
+
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    transition: .2s ease-in background;
+    -webkit-transition: .2s ease-in background;
+}
+
+#countcontrols.pagenav a:hover {
+    background: #ABA798;
+}
+
+#countcontrols.pagenav a.prevpage:after {
+    content: "\f053";
+}
+
+#countcontrols.pagenav a.nextpage:after {
+    content: "\f054";
+}
+
+#countcontrols.pagenav a.lastpage,
+#countcontrols.pagenav a.firstpage {
+    display: none;
+}
+
+#countcontrols.pagenav span {
+    float: left !IMPORTANT;
+    text-shadow: none;
+    color: rgba(236,240,241,0.5);
+    font-size: 14px;
+    margin-top: 9px;
+}
+
+
+#quicksearchbar {
+    z-index: 10;
+    background: none;
+}
+
+#quicksearchbar > a {
+    display: none;
+}
+
+input#quicksearchbox {
+    font-size: 14px;
+    padding: 10px 5px;
+    top: -23px;
+    left: auto;
+    z-index: 25;
+    right: 30px;
+    width: 190px;
+    height: auto; /* Calculated to 39px */
+    box-sizing: border-box;
+    color: rgba(236, 240, 241, 0.7);
+    background: #95A5A6;
+    border-bottom: 1px solid rgba(236, 240, 241, 0.7);
+    outline: none;
+    transition: .2s ease-in color, .2s ease-in border-bottom;
+    -webkit-transition: .2s ease-in color, .2s ease-in border-bottom;
+}
+
+input#quicksearchbox:focus,
+input#quicksearchbox:active {
+    color: #FAFAFA;
+    border-bottom-color: #FAFAFA;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow:0 0 0 50px #95A5A6 inset;
+    -webkit-text-fill-color: rgba(236, 240, 241, 0.7);
+}
+
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 50px #95A5A6 inset;
+    -webkit-text-fill-color: #FAFAFA;
+}
+#searchfilter label {
+    position: absolute;
+    z-index: 20;
+    color: #7F8C8D;
+    font-size: 0px;
+    padding-right: 10px;
+    right: 2px;
+    top: 0px;
+
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+
+    transition: .2s ease-in color;
+    -webkit-transition: .2s ease-in color;
+}
+
+#searchfilter label:after {
+    position: absolute;
+    content: "\f0b0";
+    font-size: 18px;
+    right: -10px;
+    cursor: pointer;
+}
+
+
+#searchfilter {
+    right: 19px;
+    width: 20px;
+    top: -11px;
+}
+
+#searchfilter select {
+    color: transparent;
+    z-index: 25;
+    width: 40px;
+    box-sizing: border-box;
+    right: 10px;
+    top: -5px;
+    position: relative;
+    cursor: pointer;
+
+    padding: 5px 8px;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+}
+
+#searchfilter select:focus {
+    outline: none;
+}
+
+#searchfilter select option {
+    color: #333;
+}
+
+
+
+
+a.rcmContactAddress {
+    font-weight: bold;
+}
+
+a.rcmContactAddress:after {
+    position: absolute;
+    content: '<' attr(title) '>';
+    margin-left: 5px;
+    font-weight: normal;
+}
+
+a[href="#add"] { display: none; }
+
+
+
+body.loginPage #login-form { border: none; }
+body.loginPage .boxtitle { display: none; }
+body.loginPage .boxcontent { background-color: transparent; }
+
+body.loginPage #login-form table td.title { display: none; }
+body.loginPage #login-form table td.input input { width: 320px; }
+
+body.loginPage input[type="text"],
+body.loginPage input[type="password"] {
+    font-size: 22px;
+    margin-bottom: 25px;
+    padding: 10px 5px;
+    top: -23px;
+    left: auto;
+    z-index: 25;
+    right: 30px;
+    width: 320px;
+    height: auto;
+    box-sizing: border-box;
+    color: rgba(236, 240, 241, 0.7);
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(236, 240, 241, 0.7);
+    outline: none;
+    transition: .2s ease-in color, .2s ease-in border-bottom;
+    -webkit-transition: .2s ease-in color, .2s ease-in border-bottom;
+}
+
+body.loginPage input[type="submit"] {
+    border: none;
+    border-radius: 0;
+    padding: 12px 50px;
+    font-size: 22px;
+    font-weight: 400;
+    text-align: center;
+    color: #ecf0f1;
+    background: transparent;
+    cursor: pointer;
+    height: auto;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    transition: .2s ease-in background;
+    -webkit-transition: .2s ease-in background;
+}
+
+body.loginPage input[type="submit"]:hover {
+    background: #989587;
+}
+
+
+input:-webkit-autofill {
+    -webkit-box-shadow:0 0 0 50px #8D8A7F inset;
+    -webkit-text-fill-color: rgba(236, 240, 241, 0.7);
+}
+
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 50px #8D8A7F inset;
+    -webkit-text-fill-color: #FAFAFA;
+}
+
+
+body.loginPage #login-form table tr:nth-child(3n) { display: none; }
+
+
+
+
+
+#messageframe .boxfooter { display: none; }
+#messageframe .boxlistcontent { bottom: 0; }
+
+div.message-part, div.message-htmlpart {
+    padding: 0;
+}
+
+#messagelistcontainer.boxlistcontent {
+    bottom: 57px;
+}
+
+
+
+
+
+
+
+
+
+
+
